@@ -1,0 +1,365 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$width: 1024;
+$height: 768;
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+video {
+	position: relative;
+	display: block;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.ipad-screen {
+	position: absolute;
+	z-index: 6;
+	width: 1024px;
+	height: 768px;
+	top: 56px;
+	left: 113px;
+}
+
+.ipad-frame {
+	// position: absolute;
+	// z-index: 7;
+}
+
+.header {
+	float: left;
+	background: no-repeat url("../img/header.png") black;
+		background-size: 100% 100%;
+	color: white;
+	height: 50 / 768 * 100%; // 50px
+	z-index: 6;
+	h1, h2 {
+		display: inline;
+	}
+
+	.settings-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50 / 1024 * 100%;
+	}
+}
+
+#settings-menu {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: no-repeat url("../img/menu.png") black;
+	background-size: 100% 100%;
+	height: 50px;
+	width: 415 / 1024 * 100%;
+	z-index: 5;
+	transition: top 0.4s, height 0.4s;
+	&.show-menu {
+		height: 280 / 768 * 100%;
+		top: 50 / 768 * 100%
+	}
+
+	.settings-close-button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 50px;
+		width: 50px;
+	}
+}
+
+.main {
+	position: relative;
+	background-color: #080D11;
+	color: white;
+	float: left;
+	height: 718 / 768 * 100%; // 718px
+	width: 100%;
+	overflow: hidden;
+}
+
+#sidebar-left {
+	float: left;
+	height: 100%; // 718px
+	width: 194 / 1024 * 100%; // 194px
+
+	&>* {
+		border-top: 1px solid #257BD6;
+		border-right: 1px solid #257BD6;
+	}
+
+	#profile {
+		background: no-repeat url("../img/jaywright.png") black;
+		background-size: 100% 100%;
+		height: 338 / 718 * 100%; // 338px
+		text-align: center;
+	}
+
+	#other-games {
+		background: no-repeat url("../img/watchnow.png") black;
+		background-size: 100% 100%;
+		height: 380 / 718 * 100%; // 380px
+	}
+}
+
+#middle {
+	float: left;
+	height: 100%; // 718px
+	width: 600 / 1024 * 100%; // 600px 58.59375
+	transition: width 0.4s;
+
+	&.wide {
+		width: 78.79375%;
+	}
+
+	&>* {
+		border-top: 1px solid #257BD6;
+	}
+
+	#court {
+		position: relative;
+		background-color: orange;
+		height: 47.07520891%; // 338px
+		overflow: hidden;
+		transition: height 0.4s;
+
+		&.wide {
+			height: 60%;
+		}
+
+		.player {
+			position: absolute;
+			transform: translate(-50%,-50%);
+			width: 24px;
+			height: 24px;
+			border-radius: 12px;
+			text-align: center;
+			font-size: .7em;
+			vertical-align: middle;
+		}
+
+		.hasBall {
+
+			&:after {
+				position: absolute;
+				z-index: -1;
+				top: -6px;
+				left: -6px;
+				content: " ";
+				height: 30px;
+				width: 30px;
+				border: 3px solid yellow;
+				border-radius: 50%;
+				
+			}
+
+				
+		}
+
+		
+
+		.nova {
+			background-color: white;
+			border: 3px solid orange;
+			color: orange;
+		}
+
+		.unc {
+			background-color: white;
+			border: 3px solid lightblue;
+			color: lightblue;
+
+		}
+
+		#nova1 {
+			left: 20%;
+			top: 20%;
+		}
+
+		#nova2 {
+			left: 0%;
+			top: 35%;
+		}
+
+		#nova3 {
+			left: 32%;
+			top: 45%;
+		}
+
+		#nova5 {
+			left: 22%;
+			top: 65%;
+		}
+
+		#nova45 {
+			left: 75%;
+			top: 30%;
+		}
+
+		#unc1 {
+			left: 11%;
+			top: 40%;
+		}
+
+		#unc2 {
+			left: 23%;
+			top: 41%;
+		}
+
+		#unc5 {
+			left: 40%;
+			top: 58%;
+		}
+
+		#unc3 {
+			left: 80%;
+			top: 35%;
+		}
+
+		#unc44 {
+			left: 41%;
+			top: 42%;
+		}
+
+
+		#court-img {
+			width: 100%;
+			height: 100%;
+		}
+
+
+	}
+
+	#replay-bar {
+		position: relative;
+		background: no-repeat url("../img/ticker.png") black;
+		background-size: 100% 100%;
+		height: 4.735376045%; // 34px
+		transition: background 0.4s;
+		&.wide {
+			background: no-repeat url("../img/tickerwide.png") black;
+
+			.button {
+				right: 10px;
+			}
+		}
+
+		.button {
+			position: absolute;
+			right: 0;
+			height: 100%;
+			width: 150px;
+			// background-color: rgba(255,255,255,0.5);
+		}
+	}
+
+	#score-bar {
+		background: no-repeat url("../img/score.png") black;
+		background-size: 100% 100%;
+		height: 5.571030641%; // 40px
+		transition: background 0.4s;
+		&.wide {
+			background: no-repeat url("../img/scorewide.png") black;
+		}
+	}
+
+	#player-info {
+		position: relative;
+		background: no-repeat url("../img/philbooth.png") black;
+		background-size: 100% 100%;
+		height: 42.6183844%; // 306px
+		transition: background 0.4s;
+		&.wide {
+			background: no-repeat url("../img/philboothwide.png") black;
+
+			.button {
+				top: 10px;
+				// right: 0;
+			}
+		}
+		&.compare {
+			background: no-repeat url("../img/2p.png") black;
+
+			.button {
+				top: 0;
+				right: 0;
+				height: 50px;
+				width: 50px;
+			}
+
+			&.wide {
+				background: no-repeat url("../img/2pwide.png") black;
+
+				.button {
+					right: 20px;
+				}
+			}
+		}
+
+		.button {
+			position: absolute;
+			right: 55px;
+			top: 22px;
+			height: 30px;
+			width: 150px;
+			// background-color: rgba(255,255,255,0.5);
+		}
+	}
+}
+
+#sidebar-right {
+	position: absolute;
+	// float: left;
+	// top: 0;
+	right: 0;
+	height: 100%;
+	width: 22.4609375%; // 230px
+	transition: right 0.4s;
+
+	body.sidebar-right-hidden & {
+		right: -20.2%;
+	}
+
+	&>div {
+		border-top: 1px solid #257BD6;
+		border-left: 1px solid #257BD6;
+	}
+
+	#right-close {
+		height: 100%;
+		width: 10%;
+		float: left;
+		color: white;
+		background: no-repeat url("../img/rightclose.png") black;
+		background-size: 100% 100%;
+	}
+
+	#trivia {
+		float: left;
+		background: no-repeat url("../img/trivia.png") black;
+		background-size: 100% 100%;
+		height: 51.25348189%; // 368px
+		width: 90%;
+	}
+
+	#live-feed {
+		float: left;
+		background: no-repeat url("../img/livestream.png") black;
+		background-size: 100% 100%;
+		height: 48.74651811%; // 350px
+		width: 90%;
+	}
+
+}
